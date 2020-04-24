@@ -1,6 +1,6 @@
 interface ArgsInterface {
-	value1: Array<number>,
-	value2: number
+	value1: Array<number>;
+	value2: number;
 }
 
 const parseArguments = (args: Array<string>): ArgsInterface => {
@@ -8,9 +8,9 @@ const parseArguments = (args: Array<string>): ArgsInterface => {
 	const newArray = args.slice(3);
 	const numberArray = newArray.map(item => {
 		if (!isNaN(Number(item))) {
-			return Number(item)
+			return Number(item);
 		} else {
-			throw new Error('Providied values were not numbers!')
+			throw new Error('Providied values were not numbers!');
 		}
 	});
 
@@ -18,21 +18,21 @@ const parseArguments = (args: Array<string>): ArgsInterface => {
 		return {
 			value1: numberArray,
 			value2: Number(args[2])
-		}
+		};
 	} else {
 		throw new Error('Provided values were not numbers!');
 	}
-}
+};
 
 
 interface Result {
-	periodLength: number,
-	trainingDays: number,
-	success: boolean,
-	rating: number,
-	ratingDescription: string,
-	target: number,
-	average: number
+	periodLength: number;
+	trainingDays: number;
+	success: boolean;
+	rating: number;
+	ratingDescription: string;
+	target: number;
+	average: number;
 }
 
 const calculateExercises = (arr: Array<number>, num: number): Result => {
@@ -57,8 +57,8 @@ const calculateExercises = (arr: Array<number>, num: number): Result => {
 		ratingDescription,
 		target,
 		average
-	}
-}
+	};
+};
 
 try {
 	const { value1, value2 } = parseArguments(process.argv);
@@ -66,3 +66,5 @@ try {
 } catch (error) {
 	console.log('Error, something bad happened, message: ', error.message);
 }
+
+export { calculateExercises };
