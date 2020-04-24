@@ -27,6 +27,7 @@ const calculateBmi = (a: number, b: number): string => {
 	} else if (bmi > 25) {
 		return 'Overweight';
 	}
+	return '';
 };
 
 try {
